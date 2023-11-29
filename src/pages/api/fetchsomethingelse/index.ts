@@ -10,6 +10,10 @@ export default async function handler(
 ) {
   if (req.method !== "GET")
     return res.status(405).json({ message: "Method not allowed" });
+  const cookies = req.headers.cookie;
+  if (cookies) {
+    console.log("Cookies - 🍪: ", cookies);
+  }
   //add 2 seconds delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
   res
