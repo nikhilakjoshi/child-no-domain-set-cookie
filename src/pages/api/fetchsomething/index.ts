@@ -50,7 +50,7 @@ export default async function handler(
       .getTime()
       .toString(
         36,
-      )}; Secure; HttpOnly; SameSite=None; Path=/; domain=.banking.bluebuckdesigns.xyz;`,
+      )};Domain=.banking.bluebuckdesigns.xyz;HttpOnly; SameSite=None;Secure;`,
   );
   res.status(200).send({ message: "success" });
 }
