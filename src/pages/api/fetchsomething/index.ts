@@ -48,5 +48,7 @@ export default async function handler(
     "Set-Cookie",
     `token=${new Date().getTime().toString(36)};HttpOnly;SameSite=None;Secure;`,
   );
-  res.status(200).json({ message: "success" });
+  res
+    .status(200)
+    .json({ message: `success - ${new Date().getTime().toString(36)}` });
 }
