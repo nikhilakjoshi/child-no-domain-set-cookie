@@ -21,16 +21,28 @@ export default function Home() {
           </h2>
         </nav>
         <div className="grid grow place-items-center px-20">
-          <button
-            onClick={async () => {
-              const response = await fetch("/api/fetchsomethingelse");
-              const data = (await response.json()) as { message: string };
-              console.log(data);
-            }}
-            className="rounded bg-orange-500 px-4 py-2 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-opacity-50"
-          >
-            Fetch from Banking.EdwardJones.com
-          </button>
+          <div className="flex flex-col gap-8">
+            <button
+              onClick={async () => {
+                const response = await fetch("/api/fetchsomething");
+                const data = (await response.json()) as { message: string };
+                console.log(data);
+              }}
+              className="rounded bg-orange-500 px-4 py-2 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-opacity-50"
+            >
+              GET Call to Banking.Edwardjones.com and Set-Cookie with no domain
+            </button>
+            <button
+              onClick={async () => {
+                const response = await fetch("/api/fetchsomethingelse");
+                const data = (await response.json()) as { message: string };
+                console.log(data);
+              }}
+              className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50"
+            >
+              Check if cookies are being sent
+            </button>
+          </div>
         </div>
       </main>
     </>
