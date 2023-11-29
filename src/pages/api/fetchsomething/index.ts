@@ -48,9 +48,7 @@ export default async function handler(
     "Set-Cookie",
     `token=${new Date()
       .getTime()
-      .toString(
-        36,
-      )};HttpOnly;SameSite=None;Secure;Domain=banking.bluebuckdesigns.xyz;`,
+      .toString(36)};HttpOnly;SameSite=None;Secure;SameSite=Strict;`,
   );
   res
     .status(200)
