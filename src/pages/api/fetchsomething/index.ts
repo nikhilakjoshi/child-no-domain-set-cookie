@@ -41,7 +41,7 @@ export default async function handler(
 ) {
   if (req.method !== "GET")
     return res.status(405).json({ message: "Method not allowed" });
-  //   runMiddleware(req, res, cors);
+  runMiddleware(req, res, cors);
   //add 2 seconds delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
   res.setHeader(
