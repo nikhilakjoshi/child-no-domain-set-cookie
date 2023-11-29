@@ -24,7 +24,7 @@ export default function Home() {
           <button
             onClick={async () => {
               const response = await fetch("/api/fetchsomethingelse");
-              const data = await response.json();
+              const data = (await response.json()) as { message: string };
               console.log(data);
             }}
             className="rounded bg-orange-500 px-4 py-2 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-opacity-50"
