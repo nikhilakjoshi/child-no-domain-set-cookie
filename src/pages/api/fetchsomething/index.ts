@@ -46,11 +46,7 @@ export default async function handler(
   await new Promise((resolve) => setTimeout(resolve, 2000));
   res.setHeader(
     "Set-Cookie",
-    `token=${new Date()
-      .getTime()
-      .toString(
-        36,
-      )};Domain=banking.bluebuckdesigns.xyz;HttpOnly;SameSite=None;Secure;Partitioned;`,
+    `token=${new Date().getTime().toString(36)};HttpOnly;SameSite=None;Secure;`,
   );
   res.status(200).send({ message: "success" });
 }
